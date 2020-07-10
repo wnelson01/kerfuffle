@@ -1,0 +1,66 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://assets/sample-sheet.png" type="Texture" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 41, 3 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 36, 3 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 44.5046, 3 )
+
+[node name="Amarelo" type="Sprite"]
+position = Vector2( 1, 0 )
+texture = ExtResource( 2 )
+centered = false
+
+[node name="DropThroughPlatforms" type="StaticBody2D" parent="."]
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DropThroughPlatforms"]
+position = Vector2( 128, 123 )
+shape = SubResource( 1 )
+one_way_collision = true
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="DropThroughPlatforms"]
+position = Vector2( 52, 147 )
+shape = SubResource( 2 )
+one_way_collision = true
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="DropThroughPlatforms"]
+position = Vector2( 211.489, 147 )
+shape = SubResource( 3 )
+one_way_collision = true
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="DropThroughPlatforms"]
+polygon = PoolVector2Array( 159, 93, 159, 87, 224, 87, 224, 93 )
+one_way_collision = true
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="DropThroughPlatforms"]
+polygon = PoolVector2Array( 247, 117, 247, 112, 280, 112, 280, 117, 247, 117, 247, 112, 280, 112, 280, 117 )
+one_way_collision = true
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="DropThroughPlatforms"]
+polygon = PoolVector2Array( 280, 133, 280, 128, 312, 128, 312, 133 )
+one_way_collision = true
+
+[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="DropThroughPlatforms"]
+polygon = PoolVector2Array( 344, 112, 344, 104, 304, 104, 304, 112 )
+one_way_collision = true
+
+[node name="CollisionPolygon2D5" type="CollisionPolygon2D" parent="DropThroughPlatforms"]
+polygon = PoolVector2Array( 312, 157, 312, 152, 352, 152, 352, 157 )
+one_way_collision = true
+
+[node name="CollisionPolygon2D6" type="CollisionPolygon2D" parent="DropThroughPlatforms"]
+polygon = PoolVector2Array( 344, 124, 344, 120, 352, 120, 352, 124 )
+one_way_collision = true
+
+[node name="Area2D" type="StaticBody2D" parent="."]
+collision_mask = 2147483648
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+polygon = PoolVector2Array( 16, 184, 18, 184, 40, 206, 42, 208, 182, 208, 184, 206, 186, 204, 188, 202, 190, 200, 229, 200, 232, 198, 246, 184, 325, 184, 328, 182, 330, 180, 342, 168, 352, 168, 352, 169, 344, 169, 342, 171, 340, 173, 328, 185, 248, 185, 246, 187, 232, 201, 192, 201, 190, 203, 184, 209, 40, 209, 16, 185, 16, 184 )
